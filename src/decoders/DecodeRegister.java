@@ -22,6 +22,8 @@ public class DecodeRegister {
 				regValueFinal.add(i, Integer.toString(Integer.parseInt(regValue.get(i)) + 15));
 			} else if (regVariable.get(i).equals("s")) {
 				regValueFinal.add(i, regValue.get(i));
+			} else if(regVariable.get(i).equals("z")) {
+				regValueFinal.add(i, "0");
 			}
 		}
 
