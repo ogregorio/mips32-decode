@@ -1,7 +1,7 @@
 package decoders;
 
 public class DecodeOpcode {
-	public String DecodeOpcode(String opcode) {	
+	public String decodeOpcode(String opcode) {	
 		switch (opcode) {
 		case "add":return "100000";
 		case "addi":return "001000";

@@ -22,13 +22,13 @@ public class Mips32Decode {
 		System.out.println(instruction+" "+opcode+" "+instructionType);
 		switch(instructionType) {
 		case "r":
-			teste = decode.DecodeRegistersTypeR(instruction)+decodeOP.DecodeOpcode(opcode);
+			teste = decode.DecodeRegistersTypeR(instruction)+decodeOP.decodeOpcode(opcode);
 			break;
 		case "j":
-			teste = decode.DecodeRegistersTypeJ(instruction)+decodeOP.DecodeOpcode(opcode);
+			teste = decode.DecodeRegistersTypeJ(instruction)+decodeOP.decodeOpcode(opcode);
 			break;
 		case "i":
-			teste = decode.DecodeRegistersTypeI(instruction)+decodeOP.DecodeOpcode(opcode);
+			teste = decode.DecodeRegistersTypeI(instruction)+decodeOP.decodeOpcode(opcode);
 			break;	
 		}
 		System.out.println(teste);

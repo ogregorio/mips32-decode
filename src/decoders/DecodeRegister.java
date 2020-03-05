@@ -130,6 +130,41 @@ public class DecodeRegister {
 			return regValue.get(2)+" "+regValue.get(1)+" "+regValue.get(0)+" ";
 
 	}
-	public String DecodeRegistersTypeJ(String instruction) {}
-	public String DecodeRegistersTypeI(String instruction) {}
+	public String DecodeRegistersTypeJ(String instruction) {
+		int initialPosition = instruction.indexOf("$");
+		int finalPosition = instruction.indexOf("$")+3;
+		String regValueFinal = "";
+		String regVariable = "";
+		String regValue = "";
+		for (int i=0;i<=9;i++) {
+			if ( (instruction.substring(instruction.indexOf("$")+3)).equals( Integer.toString(i) )) {
+				regVariable = instruction.substring(initialPosition+1,finalPosition-1);
+				regValue = instruction.substring(initialPosition+2,finalPosition+1);
+				break;
+			} else {
+				regVariable = instruction.substring(initialPosition+1,finalPosition-1);
+				regValue = instruction.substring(initialPosition+2,finalPosition);
+			}
+		}
+		
+		if ( (regVariable.equals("t")) || (regVariable.equals("r")) ) {
+			regValueFinal = regValue;
+		} else if ( regVariable.equals("s") ) {
+			regValueFinal = regValue;
+		} else if( regVariable.equals("z") ) {
+			regValueFinal = "0";
+		}
+		
+		int convBinary = Integer.parseInt(regValueFinal);
+		int[] convBinaryFinal = new int[5];
+		for (int i = 0; i<=4; i++) {
+			convBinaryFinal[i] = convBinary%2;
+			convBinary /= 2;
+		}
+		regValueFinal = "";
+		for (int i = 4; i>=0; i--) 
+			regValueFinal += Integer.toString(convBinaryFinal[i]);
+		return regValueFinal+" ";
+	}
+	public String DecodeRegistersTypeI(String instruction) {return "teste";}
 }
