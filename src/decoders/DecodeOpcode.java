@@ -8,7 +8,7 @@ public class DecodeOpcode {
 		case "sub":return "100010";
 		case "mult":return "011000";
 		case "div":return "011010";
-		//case "neg ":return "000000";
+		case "neg ":return "000111";
 		case "and":return "100100";
 		case "andi":return "001100";
 		case "or":return "100101";

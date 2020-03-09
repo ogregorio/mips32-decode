@@ -18,7 +18,7 @@ public class RegisterIdentifier {
 		case "and":return "r";
 		case "sll":return "r";
 		case "srl":return "r";
-		case "jr":return "r";
+		case "jr":return "j";
 		case "or":return "r";
 		case "neg":return "r";
 		//type J

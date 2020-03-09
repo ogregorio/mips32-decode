@@ -2,6 +2,8 @@ package decoders;
 
 import java.util.*;
 
+import treatment.BinaryConversor;
+
 public class DecodeRegister {
 	public String DecodeRegistersTypeR(String instruction) {
 
@@ -148,23 +150,55 @@ public class DecodeRegister {
 		}
 		
 		if ( (regVariable.equals("t")) || (regVariable.equals("r")) ) {
-			regValueFinal = regValue;
+			regValueFinal = Integer.toString(Integer.parseInt(regValue)+15);
 		} else if ( regVariable.equals("s") ) {
 			regValueFinal = regValue;
 		} else if( regVariable.equals("z") ) {
 			regValueFinal = "0";
 		}
 		
-		int convBinary = Integer.parseInt(regValueFinal);
-		int[] convBinaryFinal = new int[5];
-		for (int i = 0; i<=4; i++) {
-			convBinaryFinal[i] = convBinary%2;
-			convBinary /= 2;
-		}
-		regValueFinal = "";
-		for (int i = 4; i>=0; i--) 
-			regValueFinal += Integer.toString(convBinaryFinal[i]);
-		return regValueFinal+" ";
+		String binary = BinaryConversor.convBinary(regValueFinal);
+		return binary+" ";
 	}
-	public String DecodeRegistersTypeI(String instruction) {return "teste";}
+	
+	
+	public String DecodeRegistersTypeI(String instruction) {
+		List<String> regVariable = new ArrayList<String>();
+		List<String> regValue = new ArrayList<String>();
+		List<String> regValueFinal = new ArrayList<String>();
+
+		
+			int initialPosition = 0;
+			int finalPosition = instruction.indexOf("$")+3;
+			regVariable.add(0, instruction.substring(initialPosition+3,finalPosition-1));
+			regValue.add(0, instruction.substring(initialPosition+4,finalPosition));
+			instruction = instruction.substring(finalPosition,instruction.length());
+
+			initialPosition = 0;
+			finalPosition = (instruction.indexOf("$"));
+			regValue.add(1, instruction.substring(initialPosition,finalPosition));
+			regVariable.add(1,"s");
+			instruction = instruction.substring(finalPosition,instruction.length());
+			
+			initialPosition = (instruction.indexOf("$"));
+			finalPosition = instruction.length();
+			regVariable.add(2,instruction.substring(initialPosition+1,finalPosition-1));
+			regValue.add(2, instruction.substring(initialPosition+2,finalPosition));
+
+		for (int i = 0; i <= 2; i++) {
+			if (regVariable.get(i).equals("t") || regVariable.get(i).equals("r")) {
+				regValueFinal.add(i, Integer.toString(Integer.parseInt(regValue.get(i)) + 15));
+			} else if (regVariable.get(i).equals("s")) {
+				regValueFinal.add(i, regValue.get(i));
+			} else if(regVariable.get(i).equals("z")) {
+				regValueFinal.add(i, "0");
+			}
+		}
+
+		String binaryA = BinaryConversor.convBinaryList(regValueFinal, 0, 5);
+		String binaryB = BinaryConversor.convBinaryList(regValueFinal, 1, 15);
+		String binaryC = BinaryConversor.convBinaryList(regValueFinal, 2, 5);
+		return binaryC+" "+binaryB+" "+binaryA+" ";
+	}
+	
 }
