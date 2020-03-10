@@ -16,22 +16,26 @@ public class Mips32Decode {
 		DecodeRegister decode = new DecodeRegister();
 		DecodeOpcode decodeOP = new DecodeOpcode();
 		String instruction = scanner.nextLine();
-		instruction = InstructionTreatment.instructionTreatment(instruction);
-		instructionType = RegisterIdentifier.instructionIdentifierType(instruction);
-		String opcode = RegisterIdentifier.opcodeIdentifier(instruction);
-		System.out.println(instruction+" "+opcode+" "+instructionType);
-		switch(instructionType) {
-		case "r":
-			teste = decode.decodeRegistersTypeR(instruction)+decodeOP.decodeOpcode(opcode);
-			break;
-		case "j":
-			teste = decode.decodeRegistersTypeJ(instruction)+decodeOP.decodeOpcode(opcode);
-			break;
-		case "i":
-			teste = decode.decodeRegistersTypeI(instruction)+decodeOP.decodeOpcode(opcode);
-			break;	
+		if (!instruction.equals ("nop")) {
+			instruction = InstructionTreatment.instructionTreatment(instruction);
+			instructionType = RegisterIdentifier.instructionIdentifierType(instruction);
+			String opcode = RegisterIdentifier.opcodeIdentifier(instruction);
+			System.out.println(instruction+" "+opcode+" "+instructionType);
+			switch(instructionType) {
+			case "r":
+				teste = decode.decodeRegistersTypeR(instruction)+decodeOP.decodeOpcode(opcode);
+				break;
+			case "j":
+				teste = decode.decodeRegistersTypeJ(instruction)+decodeOP.decodeOpcode(opcode);
+				break;
+			case "i":
+				teste = decode.decodeRegistersTypeI(instruction)+decodeOP.decodeOpcode(opcode);
+				break;
+			}
+			System.out.println(teste);	
 		}
-		System.out.println(teste);
+		else {System.out.println("");}
+		
 	}
 
 }
