@@ -47,10 +47,13 @@ public class DecodeRegister {
 				regValue.add(0, instruction.substring(initialPosition+2,finalPosition));
 			}
 
+		
+
 			regValueFinal.add(0, Integer.toString(decodeRegVariable(regVariable.get(0),regValue.get(0))));
+
+		
 			regValue.add(0,conv.convBinaryList(regValueFinal, 0, 5));
-			
-		return regValue.get(0)+" ";
+		return regValue.get(0);
 	}
 	public String decodeRegistersTypeI(String instruction) {
 		List<String> regVariable = new ArrayList<String>();
