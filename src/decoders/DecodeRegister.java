@@ -29,7 +29,7 @@ public class DecodeRegister {
 		for (int i = 0; i <= 2; i++) {
 			regValue.add(i,conv.convBinaryList(regValueFinal, i, 5));
 		}
-			return regValue.get(2)+" "+regValue.get(1)+" "+regValue.get(0)+" ";
+			return regValue.get(2)+regValue.get(1)+regValue.get(0);
 			
 	}
 	public String decodeRegistersTypeJ(String instruction) {
@@ -47,12 +47,9 @@ public class DecodeRegister {
 				regValue.add(0, instruction.substring(initialPosition+2,finalPosition));
 			}
 
-		
-
 			regValueFinal.add(0, Integer.toString(decodeRegVariable(regVariable.get(0),regValue.get(0))));
-
-		
 			regValue.add(0,conv.convBinaryList(regValueFinal, 0, 5));
+			
 		return regValue.get(0)+" ";
 	}
 	public String decodeRegistersTypeI(String instruction) {
@@ -85,7 +82,7 @@ public class DecodeRegister {
 		String binaryA = conv.convBinaryList(regValueFinal, 0, 5);
 		String binaryB = conv.convBinaryList(regValueFinal, 1, 15);
 		String binaryC = conv.convBinaryList(regValueFinal, 2, 5);
-		return binaryC+" "+binaryB+" "+binaryA+" ";
+		return binaryC+binaryB+binaryA;
 	}
 	
 	// Decodifica a "letra do registrador" e devolve sua posição no index de registradores
