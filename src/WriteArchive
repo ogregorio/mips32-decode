@@ -1,4 +1,4 @@
-package WorkingWithAchive;
+package WorkingWithArchive;
 
 import java.io.PrintWriter;
 import java.io.FileWriter;
