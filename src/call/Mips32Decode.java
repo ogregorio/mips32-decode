@@ -11,7 +11,7 @@ public class Mips32Decode {
 
 	static Scanner scanner = new Scanner(System.in);
 	static String instructionType;
-	public static void mips32Decode(String instruction) {
+	public static String mips32Decode(String instruction) {
 		DecodeRegister decode = new DecodeRegister();
 		DecodeOpcode decodeOP = new DecodeOpcode();
 		if (!instruction.equals ("nop")) {
@@ -30,9 +30,12 @@ public class Mips32Decode {
 				instruction = decode.decodeRegistersTypeI(instruction)+decodeOP.decodeOpcode(opcode);
 				break;
 			}
-			System.out.println(instruction);	
+			return instruction;	
 		}
-		else {System.out.println("");}
+		else {
+			instruction = " ";
+			return instruction;
+		}
 		
 	}
 

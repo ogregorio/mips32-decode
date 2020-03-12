@@ -1,7 +1,14 @@
-import call.Mips32Decode;
-public class MIPS32 {
-	public static void main(String[] args) {
-		String instruction = "add $s1, $s2, $s3";
-		Mips32Decode.mips32Decode(instruction);
-	}
+import files.*;
+
+public class MIPS32{
+   public static void main(String[] args){
+      String wayInput = args[0];
+      String wayOutput = args[1];
+      ReadArchive.archiveWasConnected(wayInput);
+      String [] allContentThatWasOnTextArchive = ReadArchive.readingArchive(wayInput).split(" ");
+      if(WriteArchive.writingOnArchive(wayOutput, allContentThatWasOnTextArchive))
+         System.out.println("The operation of write on archive was finalize with sucess !!!");
+         else
+            System.out.println("Error, the operation of write on archive was finalize without sucess !!!");
+   }
 }
