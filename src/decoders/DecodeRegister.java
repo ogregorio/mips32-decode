@@ -6,14 +6,14 @@ import treatment.BinaryConversor;
 
 public class DecodeRegister {
 	BinaryConversor conv = new BinaryConversor();
-	// Decodifica instruções do tipo R
+	// Decodifica instrucoes do tipo R
 	public String decodeRegistersTypeR(String instruction) {
 
 		List<String> regVariable = new ArrayList<String>();
 		List<String> regValue = new ArrayList<String>();
 		List<String> regValueFinal = new ArrayList<String>();
 
-		//Desfragementa a instrução em registradores
+		//Desfragementa a instrucao em registradores
 		for (int i = 0; i <= 2; i++) {
 			int initialPosition = instruction.indexOf("$");
 			int finalPosition = instruction.indexOf("$")+3;
@@ -25,7 +25,7 @@ public class DecodeRegister {
 		for (int i = 0; i <= 2; i++) {
 			regValueFinal.add(i, Integer.toString(decodeRegVariable(regVariable.get(i),regValue.get(i))));
 		}
-		//Decodifica em binário buscando o index na tabela
+		//Decodifica em binario buscando o index na tabela
 		for (int i = 0; i <= 2; i++) {
 			regValue.add(i,conv.convBinaryList(regValueFinal, i, 5));
 		}
@@ -88,7 +88,7 @@ public class DecodeRegister {
 		return binaryC+binaryB+binaryA;
 	}
 	
-	// Decodifica a "letra do registrador" e devolve sua posição no index de registradores
+	// Decodifica a "letra do registrador" e devolve sua posicao no index de registradores
 	public int decodeRegVariable(String regVariable, String regValue) {
 		regVariable = (regVariable.equals("s") && regValue.equals("p") == true)?"sp":regVariable;
 		regVariable = (regVariable.equals("t") && regValue.equals("8") == true)?"t8":regVariable;
