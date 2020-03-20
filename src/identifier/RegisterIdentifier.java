@@ -28,8 +28,8 @@ public class RegisterIdentifier {
 		case "addi":return "i";
 		case "lw":return "i";
 		case "sw":return "i";
-		case "beq":return "r";		// Alterado para "r" de "i" para que o código funcione
-		case "bne":return "r";		// Alterado para "r" de "i" para que o código funcione
+		case "beq":return "r";		// Alterado para "r" de "i" para que o codigo funcione
+		case "bne":return "r";		// Alterado para "r" de "i" para que o codigo funcione
 		case "slti":return "i";
 		case "andi":return "i";
 		case "ori":return "i";
