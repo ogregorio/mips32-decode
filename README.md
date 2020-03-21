@@ -14,10 +14,10 @@ e as intruções de máquina são escritas em um arquivo de saida.
 
 ## Como executar
 # Plataformas Testadas
-Ubuntu 18.04 e posteriores
-Debian Testing/Sid
-Pop OS 19.10
-Linux Mint 19.1  e posteriores
+Ubuntu 18.04 e posteriores;
+Debian Testing/Sid;
+Pop OS 19.10;
+Linux Mint 19.1  e posteriores;
 
 ``` sh
 sudo apt install unzip default-jre default-jdk
