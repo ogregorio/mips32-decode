@@ -20,9 +20,9 @@ Pop OS 19.10
 Linux Mint 19.1  e posteriores
 
 <code> 
-# sudo apt install unzip default-jre default-jdk
-# unzip mips32-decode-master
-# cd mips32-decode-master/
-# sh install.sh
-# java -jar mips32-decode.jar input.txt output.txt
+# sudo apt install unzip default-jre default-jdk <br>
+# unzip mips32-decode-master <br>
+# cd mips32-decode-master/ <br>
+# sh install.sh <br>
+# java -jar mips32-decode.jar input.txt output.txt <br>
 </code>
