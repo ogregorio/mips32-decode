@@ -1,0 +1,29 @@
+package WorkingWithAchive;
+import java.util.Scanner;
+
+public class Test{
+   public static void main(String[] args){
+      System.out.println("1 - Write\n2 - Read");
+      System.out.println("Press 1 or 2 :  ");
+      int op = (new Scanner(System.in)).nextInt();
+      switch(op){
+         case 1:
+               String test = "aaaa bbbb ccccc dddd eeee ffff gggg hhhh iiii jjjjj ";
+               String [] tests = test.split(" ");
+               if(WriteArchive.writingOnArchive("test.txt", tests))
+                  System.out.println("The operation of write on archive was finalize with sucess !!!");
+               else
+                  System.out.println("Error, the operation of write on archive was finalize without sucess !!!");
+               break;
+         case 2:
+               String way = "test.txt";
+               ReadArchive.archiveWasConnected(way);
+               String [] allContentThatWasOnTextArchive = ReadArchive.readingArchive(way).split(" ");
+               for(String phrase : allContentThatWasOnTextArchive)
+                  System.out.println(phrase);
+               break;
+         default: 
+            System.out.println("Option invalid!!!");
+      }
+   }
+}
