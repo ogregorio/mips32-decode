@@ -1,3 +1,0 @@
-add $s1, $s2, $s3
-sub $s2, $s3, $t3
-mult $s3, $t1, $t2
