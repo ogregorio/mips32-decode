@@ -30,6 +30,8 @@ public class Mips32Decode {
 				instruction = decode.decodeRegistersTypeI(instruction)+decodeOP.decodeOpcode(opcode);
 				break;
 			}
+			System.out.println(instruction);
+			System.out.println("Instruction decoded with no exception! Proceeding...\n");
 			return instruction;	
 		}
 		else {
