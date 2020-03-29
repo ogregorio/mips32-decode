@@ -142,7 +142,7 @@ public class DecodeRegister {
 				String binaryA = conv.convBinaryList(regValueFinal, 0, 5);
 				String binaryB = conv.convBinaryList(regValueFinal, 1, 15);
 				String binaryC = conv.convBinaryList(regValueFinal, 2, 5);
-				return binaryC+binaryB+binaryA;
+				return binaryA+binaryB+binaryC;
 				
 			} else {
 				//caso a instrucao recebida nao seja lw ou sw, usaremos um tratamento diferente
@@ -173,7 +173,7 @@ public class DecodeRegister {
 				String binaryA = conv.convBinaryList(regValueFinal, 0, 5);
 				String binaryB = conv.convBinaryList(regValueFinal, 1, 5);
 				String binaryC = conv.convBinaryList(regValueFinal, 2, 15);
-				return binaryC+binaryB+binaryA;
+				return binaryA+binaryB+binaryC;
 			}
 			
 
