@@ -21,7 +21,7 @@ public class WriteArchive{
    public static boolean writingOnArchive(String way ,String [] phrases){
       if(WriteArchive.isPossibleWriteOnArchive(way)){
          for(String phrase : phrases)
-            toRecordArchive.print(phrase);
+            toRecordArchive.print(phrase+" \n");
          toRecordArchive.close();
          return true;
       }
