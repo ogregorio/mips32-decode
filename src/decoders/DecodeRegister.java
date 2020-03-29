@@ -50,7 +50,7 @@ public class DecodeRegister {
 				regValue.add(0, instruction.substring(initialPosition+2,finalPosition));
 			}
 			regValueFinal.add(0, Integer.toString(decodeRegVariable(regVariable.get(0),regValue.get(0))));
-			regValue.add(0,conv.convBinaryList(regValueFinal, 0, 5));
+			regValue.add(0,conv.convBinaryList(regValueFinal, 0, 26));
 			return regValue.get(0); // FIM DA SESSAO COM REGISTRADORES
 		} else { // Sessao de conversao sem registradores
 			int indexFinal = 0;
@@ -84,7 +84,7 @@ public class DecodeRegister {
 			regVariable.add(0, "null");
 			
 			regValueFinal.add(0, Integer.toString(decodeRegVariable(regVariable.get(0),regValue.get(0))));
-			regValue.add(0,conv.convBinaryList(regValueFinal, 0, 15));
+			regValue.add(0,conv.convBinaryList(regValueFinal, 0, 26));
 			return regValue.get(0);
 		} // FIM DA SESSAO DE CONVERSAO SEM REGISTRADORES
 			
