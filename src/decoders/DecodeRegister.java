@@ -31,7 +31,7 @@ public class DecodeRegister {
 		for (int i = 0; i <= 2; i++) {
 			regValue.add(i,conv.convBinaryList(regValueFinal, i, 5));
 		}
-			return regValue.get(0)+regValue.get(1)+regValue.get(2);
+			return regValue.get(0)+regValue.get(1)+regValue.get(2)+"00000"+"00000";
 			
 	} // Decodifica instrucoes do tipo J
 	public String decodeRegistersTypeJ(String instruction) {
