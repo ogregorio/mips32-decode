@@ -140,7 +140,7 @@ public class DecodeRegister {
 				//um numero de 16 bits, que pode ter ate 15 numerais. apos a conversao, os strings
 				//sao concatenados e retornados.
 				String binaryA = conv.convBinaryList(regValueFinal, 0, 5);
-				String binaryB = conv.convBinaryList(regValueFinal, 1, 15);
+				String binaryB = conv.convBinaryList(regValueFinal, 1, 16);
 				String binaryC = conv.convBinaryList(regValueFinal, 2, 5);
 				return binaryA+binaryB+binaryC;
 				
@@ -172,7 +172,7 @@ public class DecodeRegister {
 
 				String binaryA = conv.convBinaryList(regValueFinal, 0, 5);
 				String binaryB = conv.convBinaryList(regValueFinal, 1, 5);
-				String binaryC = conv.convBinaryList(regValueFinal, 2, 15);
+				String binaryC = conv.convBinaryList(regValueFinal, 2, 16);
 				return binaryA+binaryB+binaryC;
 			}
 			
